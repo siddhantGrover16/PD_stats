@@ -45,24 +45,24 @@ def Main():
 
 
  if args.fmin:
-   minPD = GetMinPD(tree, ap.kval, pp[0], pp[1], pp[3])
+   minPD = GetMinPD(tree, args.kval, pp[0], pp[1], pp[3])
    minvals = minPD[3]
    AnnotateTree(o_tree, "min", minvals, 10)
 
  elif args.fmax:
-   maxPD = GetMaxPD(tree, ap.kval, pp[0], pp[1], pp[3])
+   maxPD = GetMaxPD(tree, args.kval, pp[0], pp[1], pp[3])
    maxvals = maxPD[3]
    AnnotateTree(o_tree, "max", maxvals, 10)
 
  elif args.favg:
-   avg=GetSums_Avg(tree,ap.kval,pp[0],pp[1],pp[2],pp[3])
+   avg=GetSums_Avg(tree,args.kval,pp[0],pp[1],pp[2],pp[3])
    avgvals = avg[4]
    AnnotateTree(o_tree, "avg", avgvals, 10)
 
  elif args.fvar:
-   avg = GetSums_Avg(tree, ap.kval, pp[0], pp[1], pp[2], pp[3])
-   z = Getsumsq(tree, ap.kval, avg[2], pp[0], pp[1], pp[2], pp[3])
-   var = Getdir_var(tree, ap.kval, avg[3], avg[2], z[1], pp[0], pp[1], pp[2], pp[3])
+   avg = GetSums_Avg(tree, args.kval, pp[0], pp[1], pp[2], pp[3])
+   z = Getsumsq(tree, args.kval, avg[2], pp[0], pp[1], pp[2], pp[3])
+   var = Getdir_var(tree, args.kval, avg[3], avg[2], z[1], pp[0], pp[1], pp[2], pp[3])
    varvals = var[2]
    AnnotateTree(o_tree, "var", varvals, 10)
 
