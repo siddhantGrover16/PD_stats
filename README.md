@@ -1,5 +1,5 @@
 # PD_stats
-A project designed with algorithms to compute PD Statisttics- Minimum, Maximum, Average, Variance on a nexus tree
+A project designed with algorithms to compute PD Statisttics- Minimum, Maximum, Average, Variance on a binary nexus phylogenetic tree
 
 # Requirements
   * Python 3.7
