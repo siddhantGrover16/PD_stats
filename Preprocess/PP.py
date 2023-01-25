@@ -1,11 +1,7 @@
 import numpy as np
-from Bio import Phylo
-from Bio.Phylo import BaseTree
-from Bio.Phylo.BaseTree import Clade
 from scipy.special import comb as choose
-from scipy.special import logsumexp as fix
 from decimal import *
-import math
+
 
 def preprocessTree(tree,k):
     """

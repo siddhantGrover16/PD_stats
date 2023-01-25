@@ -1,8 +1,4 @@
 import numpy as np
-from Bio import Phylo
-from Bio.Phylo import BaseTree
-from Bio.Phylo.BaseTree import Clade
-from scipy.special import comb as choose
 from decimal import *
 
 def Getdir_var(tree,k, alpha, beta, gamma, post_order_nodes, node_lookup, comb, countterm):

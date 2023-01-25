@@ -1,10 +1,5 @@
 import numpy as np
-from Bio import Phylo
-from Bio.Phylo import BaseTree
-from Bio.Phylo.BaseTree import Clade
-import pdb
 from decimal import *
-
 
 def GetMinPD(tree, k,post_order_nodes,node_lookup,countterm):
     """

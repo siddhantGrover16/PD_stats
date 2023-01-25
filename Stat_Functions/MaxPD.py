@@ -1,8 +1,4 @@
 import numpy as np
-from Bio import Phylo
-from Bio.Phylo import BaseTree
-from Bio.Phylo.BaseTree import Clade
-import time
 from decimal import *
 
 def GetMaxPD(tree, k,post_order_nodes,node_lookup,countterm):
