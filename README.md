@@ -26,6 +26,7 @@ To run this tool on a nexus tree please follow the steps below
 2) run pdstat.py with the following arguemenets:- treename, (int)k, min/max/avg/var
   * example : pdstat.py treename.tre 10 -fmax 
     The example above runs pdstat.py on the tree treefile where 10 is the user input and wants to finds the minPD
+    
     Note:- the User can run multiple functions on the the treefile, ex. pdstat.py treename.tre 10 -fmax -fmin
 3) There will be a file named "annotated_tree_nex" with the clades annotated with the minPD at clade
 
