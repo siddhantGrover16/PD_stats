@@ -4,18 +4,21 @@ A project designed with algorithms to compute PD Statisttics- Minimum, Maximum, 
 # Requirements
   * Python 3.7
  
-# Packages 
-  * Dendrop
+# Packages Used
+  * dendropy
   * Bio
-  * Decimal
+  * decimal
   * scipy
+  * numpy
+  * argparse
   
   
 the statistic arguements are as follows
--fm:- min
--fx:- max
--fa:- avg
--fv:- var
+-fmin:- min
+-fmax:- max
+-favg:- avg
+-fvar:- var
+-fhot:- hotspot measure
  
 To run this tool on a nexus tree please follow the steps below
 1) place nexus treefile in the same directory as the project
@@ -26,10 +29,8 @@ To run this tool on a nexus tree please follow the steps below
 
 A test file "t100.tre" is also placed in the directory for usage
 
-
-
-
 Scalability of Algorithms:-
 The above algorithms were run on different trees with the number of leaves ranging from 1000 to 10000 taxa with k = n
 ![image](https://user-images.githubusercontent.com/46168937/213595654-48da5734-dcf1-460d-b7e7-1f0c94bc804b.png)
+
 
