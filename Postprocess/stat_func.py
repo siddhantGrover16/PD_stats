@@ -18,31 +18,31 @@ def base(tree,k):
 def MinPD(t1,o_tree,pp,k):
     minPD = GetMinPD(t1, k, pp[0], pp[1], pp[3])
     minvals = minPD[3]
-    AnnotateTree(o_tree, "min", minvals)
+    AnnotateTree(o_tree, "min", minvals,k)
 
 def MaxPD(t1,o_tree,pp,k):
     maxPD = GetMaxPD(t1, k, pp[0], pp[1], pp[3])
     maxvals = maxPD[3]
-    AnnotateTree(o_tree, "max", maxvals)
+    AnnotateTree(o_tree, "max", maxvals,k)
 
 def AvgPD(t1,o_tree,pp,k):
     avg = GetSums_Avg(t1, k, pp[0], pp[1], pp[2], pp[3])
     avgvals = avg[4]
-    AnnotateTree(o_tree, "avg", avgvals)
+    AnnotateTree(o_tree, "avg", avgvals,k)
 
 def VarPD(t1,o_tree,pp,k):
     avg = GetSums_Avg(t1, k, pp[0], pp[1], pp[2], pp[3])
     z = Getsumsq(t1, k, avg[2], pp[0], pp[1], pp[2], pp[3])
     var = Getdir_var(t1, k, avg[3], avg[2], z[1], pp[0], pp[1], pp[2], pp[3])
     varvals = var[2]
-    AnnotateTree(o_tree, "var", varvals)
+    AnnotateTree(o_tree, "var", varvals,k)
 
 def HotPD(t1,o_tree,pp,k):
     max = GetMaxPD(t1, k, pp[0], pp[1], pp[3])
     avg = GetSums_Avg(t1, k, pp[0], pp[1], pp[2],pp[3])
     hot = Getdiv_hot(t1, k, avg[3], max[2], pp[0], pp[1], pp[3])
     hotvals = hot[2]
-    AnnotateTree(o_tree, "hot", hotvals)
+    AnnotateTree(o_tree, "hot", hotvals,k)
 
 def AllPD(t1,o_tree,pp,k):
 
