@@ -16,22 +16,26 @@ Abstract: The classic quantitative measure of phylogenetic diversity, PD, has be
   * numpy
   * argparse
   
-  
-the statistic arguements are as follows
--fmin:- min
--fmax:- max
--favg:- avg
--fvar:- var
--fhot:- hotspot measure
--fall:- computes all the statistics above
- 
+# Phylogenetic Diversity measures in the tool  
+The statistic arguments are as follows:
+- fmin: minimum PD
+- fmax: maximum PD
+- favg: average PD
+- fvar: variance in PD
+- fhot: hotspot measure
+- fall: computes all the statistics above
+
+# Tutorial
 To run this tool on a nexus tree please follow the steps below:
+
 1) place nexus binary treefile in the same directory as the project
-2) run pdstat.py with the following arguements: -treename, (int)k, min/max/avg/var
+2
+3) run pdstat.py with the following arguements: -treename, (int)k, min/max/avg/var
   * example : pdstat.py treename.tre 10 -fmax 
     The example above runs pdstat.py on the tree treefile and finds the maxPD for k=10 taxa in the tree.
     
     Note:- the user can run multiple functions on the the treefile, eg. pdstat.py treename.tre 10 -fmax -fmin
+    
 3) The output of the above command will be a file named "annotated_tree_nex" with the clades annotated with the maxPD at clades with k=10. This tree file can be opened with FigTree, and the nodes annotated using the "node labels" or "node shapes" menu.
 
 Input test files with different numbers of input taxa are also present in the directory (t50.tre,t100.tre,t200.tre,t300.tre,t400.tre).
