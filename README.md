@@ -40,7 +40,7 @@ To run this tool on a nexus tree please follow the steps below:
 Input test files with different numbers of input taxa are also present in the directory (t50.tre,t100.tre,t200.tre,t300.tre,t400.tre).
 
 # Example
-A rooted tree file for the influenza A virus, H1 hemagglutinin gene for the Eurasian avian lineage (1C) was extracted from the [OFFLU-WHO Vaccine Consultation Report for September 2022](https://www.offlu.org/). These data were used to quantify the maximum phylogenetic diversity across each node of the phylogeny (k=1), and were used to identify hotspots of diversity across the phylogeny (k=3). The hotspot measure quantifies the degree to which "star-like" topology in the tree is apparent - [star-like topology reflects papid expansion of a virus in a population](https://en.wikipedia.org/wiki/Viral_phylodynamics). 
+A rooted tree file for the influenza A virus, H1 hemagglutinin gene for the Eurasian avian lineage (1C) was extracted from the [OFFLU-WHO Vaccine Consultation Report for September 2022](https://www.offlu.org/). These data were used to quantify the maximum phylogenetic diversity across each node of the phylogeny (k=1), and were used to identify hotspots of diversity across the phylogeny (k=3). The hotspot measure quantifies the degree to which "star-like" topology in the tree is apparent - [star-like topology reflects rapid expansion of a virus in a population](https://en.wikipedia.org/wiki/Viral_phylodynamics). 
 
 The subsequent image demonstrates that the 1C.2.5, 1C.2.3, 1C.2.2 clades have groups of HA genes that are rapidly expanding (reflected by larger circles on the nodes).
 
