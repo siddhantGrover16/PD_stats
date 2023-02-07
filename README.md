@@ -28,19 +28,27 @@ The statistic arguments are as follows:
 # Tutorial
 To run this tool on a nexus tree please follow the steps below:
 
-1) place nexus binary treefile in the same directory as the project
-2
-3) run pdstat.py with the following arguements: -treename, (int)k, min/max/avg/var
-  * example : pdstat.py treename.tre 10 -fmax 
-    The example above runs pdstat.py on the tree treefile and finds the maxPD for k=10 taxa in the tree.
+1) place a nexus binary treefile in the same directory as the project
+2) run pdstat.py with the following arguements: treename, (int)k, function (-fmin,-fmax, -favg, -fvar, -fhot, or -fall)
+  * example : pdstat.py t100.tre 10 -fmax 
+    The example above runs pdstat.py on the example treefile with 100 taxa and finds the maxPD for k=10 taxa in the tree.
     
-    Note:- the user can run multiple functions on the the treefile, eg. pdstat.py treename.tre 10 -fmax -fmin
+    Note: the user can run multiple functions on the treefile, eg. pdstat.py treename.tre 10 -fmax -fmin, or can run all functions with the -fall flag.
     
 3) The output of the above command will be a file named "annotated_tree_nex" with the clades annotated with the maxPD at clades with k=10. This tree file can be opened with FigTree, and the nodes annotated using the "node labels" or "node shapes" menu.
 
 Input test files with different numbers of input taxa are also present in the directory (t50.tre,t100.tre,t200.tre,t300.tre,t400.tre).
 
-Scalability of Algorithms:-
+# Example
+A rooted tree file for the influenza A virus, H1 hemagglutinin gene for the Eurasian avian lineage (1C) was extracted from the [OFFLU-WHO Vaccine Consultation Report for September 2022](https://www.offlu.org/). These data were used to quantify the maximum phylogenetic diversity across each node of the phylogeny (k=1), and were used to identify hotspots of diversity across the phylogeny (k=3). The hotspot measure quantifies the degree to which "star-like" topology in the tree is apparent - [star-like topology reflects papid expansion of a virus in a population](https://en.wikipedia.org/wiki/Viral_phylodynamics). 
+
+The subsequent image demonstrates that the 1C.2.5, 1C.2.3, 1C.2.2 clades have groups of HA genes that are rapidly expanding (reflected by larger circles on the nodes).
+
+<center>
+  <img src="img/hotSpot-1C-annotated_tree-k3.pdf">
+</center>
+
+# Scalability of Algorithms
 The above algorithms were run on different trees with the number of leaves ranging from 1000 to 10000 taxa with k = n
 ![image](https://user-images.githubusercontent.com/46168937/213595654-48da5734-dcf1-460d-b7e7-1f0c94bc804b.png)
 
