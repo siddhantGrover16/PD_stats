@@ -1,5 +1,5 @@
 # Phylogenetic Diversity Statistics for All Clades in a Phylogeny
-A project designed with algorithms to compute Phylogenetic Diversity (PD) Statistics - Minimum, Maximum, Average, Variance, and HotSpots on a phylogenetic tree.
+A project designed with algorithms to compute [Phylogenetic Diversity (PD) Statistics](https://en.wikipedia.org/wiki/Phylogenetic_diversity) - Minimum, Maximum, Average, Variance, and HotSpots on a phylogenetic tree.
 
 Grover, S., Markin, A., Anderson, T.K., and Eulenstein, O. (in review). Phylogenetic Diversity Statistics for All Clades in a Phylogeny.
 
