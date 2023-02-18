@@ -1,5 +1,9 @@
-# PD_stats
-A project designed with algorithms to compute PD Statisttics- Minimum, Maximum, Average, Variance on a binary nexus phylogenetic tree
+# Phylogenetic Diversity Statistics for All Clades in a Phylogeny
+A project designed with algorithms to compute [Phylogenetic Diversity (PD) Statistics](https://en.wikipedia.org/wiki/Phylogenetic_diversity) - Minimum, Maximum, Average, Variance, and HotSpots on a phylogenetic tree.
+
+Grover, S., Markin, A., Anderson, T.K., and Eulenstein, O. (in review). Phylogenetic Diversity Statistics for All Clades in a Phylogeny.
+
+Abstract: The classic quantitative measure of phylogenetic diversity, PD, has been used to address problems in conservation biology, microbial ecology, and evolutionary biology. PD is the minimum total length of the branches in a phylogeny required to cover a specified set of taxa on the phylogeny. A general goal in the application of PD has been identifying taxa that maximize PD on a given phylogeny; this has been mirrored in active research to develop efficient algorithms for the problem. Other descriptive statistics, such as the minimum PD, average PD, and standard deviation of PD, can provide invaluable insight into the distribution of PD across a phylogeny. However, there has been limited or no research on computing these statistics, especially when required for each clade in a phylogeny, enabling direct comparisons of PD between clades. We introduce efficient algorithms for computing PD and the associated descriptive statistics for a given phylogeny and each of its clades. In simulation studies, we demonstrate the ability of our algorithms to analyze large-scale phylogenies with applications in ecology and evolutionary biology
 
 # Requirements
   * Python 3.7
@@ -12,27 +16,39 @@ A project designed with algorithms to compute PD Statisttics- Minimum, Maximum, 
   * numpy
   * argparse
   
-  
-the statistic arguements are as follows
--fmin:- min
--fmax:- max
--favg:- avg
--fvar:- var
--fhot:- hotspot measure
--fall:- computes all the statistics above
- 
-To run this tool on a nexus tree please follow the steps below
-1) place nexus binary treefile in the same directory as the project
-2) run pdstat.py with the following arguemenets:- treename, (int)k, min/max/avg/var
-  * example : pdstat.py treename.tre 10 -fmax 
-    The example above runs pdstat.py on the tree treefile where 10 is the user input and wants to finds the minPD
+# Phylogenetic Diversity measures in the tool  
+The statistic arguments are as follows:
+- fmin: minimum PD
+- fmax: maximum PD
+- favg: average PD
+- fvar: variance in PD
+- fhot: hotspot measure
+- fall: computes all the statistics above
+
+# Tutorial
+To run this tool on a nexus tree please follow the steps below:
+
+1) place a nexus binary treefile in the same directory as the project
+2) run pdstat.py with the following arguements: treename, (int)k, function (-fmin,-fmax, -favg, -fvar, -fhot, or -fall)
+  * example : pdstat.py t100.tre 10 -fmax 
+    The example above runs pdstat.py on the example treefile with 100 taxa and finds the maxPD for k=10 taxa in the tree.
     
-    Note:- the User can run multiple functions on the the treefile, ex. pdstat.py treename.tre 10 -fmax -fmin
-3) There will be a file named "annotated_tree_nex" with the clades annotated with the minPD at clade
+    Note: the user can run multiple functions on the treefile, eg. pdstat.py treename.tre 10 -fmax -fmin, or can run all functions with the -fall flag.
+    
+3) The output of the above command will be a file named "annotated_tree_nex" with the clades annotated with the maxPD at clades with k=10. This tree file can be opened with FigTree, and the nodes annotated using the "node labels" or "node shapes" menu.
 
-Test files t50.tre,t100.tre,t200.tre,tt300.tre,t400.tre are also present in the directory for tests.
+Input test files with different numbers of input taxa are also present in the directory (t50.tre,t100.tre,t200.tre,t300.tre,t400.tre).
 
-Scalability of Algorithms:-
+# Example
+A rooted tree file for the influenza A virus, H1 hemagglutinin gene for the Eurasian avian lineage (1C) was extracted from the [OFFLU-WHO Vaccine Consultation Report for September 2022](https://www.offlu.org/). These data were used to quantify the maximum phylogenetic diversity across each node of the phylogeny (k=1), and were used to identify hotspots of diversity across the phylogeny (k=3). The hotspot measure quantifies the degree to which "star-like" topology in the tree is apparent - [star-like topology reflects rapid expansion of a virus in a population](https://en.wikipedia.org/wiki/Viral_phylodynamics). 
+
+The subsequent image demonstrates that the 1C.2.5, 1C.2.3, 1C.2.2 clades have groups of HA genes that are rapidly expanding (reflected by larger circles on the nodes).
+
+<center>
+  <img src="img/hotSpot-1C-annotated_tree-k3.png">
+</center>
+
+# Scalability of Algorithms
 The above algorithms were run on different trees with the number of leaves ranging from 1000 to 10000 taxa with k = n
 ![image](https://user-images.githubusercontent.com/46168937/213595654-48da5734-dcf1-460d-b7e7-1f0c94bc804b.png)
 
