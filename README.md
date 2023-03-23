@@ -40,12 +40,12 @@ To run this tool on a nexus tree please follow the steps below:
 Input test files with different numbers of input taxa are also present in the directory (t50.tre,t100.tre,t200.tre,t300.tre,t400.tre).
 
 # Example
-A rooted tree file for the influenza A virus, H1 hemagglutinin gene for the Eurasian avian lineage (1C) was extracted from the [OFFLU-WHO Vaccine Consultation Report for September 2022](https://www.offlu.org/). These data were used to quantify the maximum phylogenetic diversity across each node of the phylogeny (k=1), and were used to identify hotspots of diversity across the phylogeny (k=3). The hotspot measure quantifies the degree to which "star-like" topology in the tree is apparent - [star-like topology reflects rapid expansion of a virus in a population](https://en.wikipedia.org/wiki/Viral_phylodynamics). 
+A rooted tree file for the influenza A virus, H1 hemagglutinin gene for the Eurasian avian lineage (1C) was extracted from the [OFFLU-WHO Vaccine Consultation Report for September 2022](https://www.offlu.org/). These data were used to quantify the maximum phylogenetic diversity across each node of the phylogeny (k=1). The PD measure quantifies clades across the tree that have relatively higher amounts of diversity. These data were collected within a 6 month temporal window, and clades that have relatively higher amounts of genetic diversity may be associated with antigenic drift away from pandemic preparedness candidate vaccine viruses (CVV) - see [Anderson et al. (2021)](https://perspectivesinmedicine.cshlp.org/content/11/3/a038737.full).
 
-The subsequent image demonstrates that the 1C.2.5, 1C.2.3, 1C.2.2 clades have groups of HA genes that are rapidly expanding (reflected by larger circles on the nodes).
+The subsequent image demonstrates that the newly emerged 1C.2.4 has the highest amount of observed diversity reflected by larger circles on the nodes which may reflect rapid diversification - specifically, there are long terminal branches relative to internal branches, and this may reflect exponential population growth of the virus (see [Volz et al. (2013)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002947).
 
 <center>
-  <img src="img/maxPD-1C-annotated_tree-k1.pdf">
+  <img src="img/maxPD-1C-annotated_tree-k1.png">
 </center>
 
 # Scalability of Algorithms
