@@ -45,7 +45,7 @@ A rooted tree file for the influenza A virus, H1 hemagglutinin gene for the Eura
 The subsequent image demonstrates that the 1C.2.5, 1C.2.3, 1C.2.2 clades have groups of HA genes that are rapidly expanding (reflected by larger circles on the nodes).
 
 <center>
-  <img src="img/hotSpot-1C-annotated_tree-k3.png">
+  <img src="img/maxPD-1C-annotated_tree-k1.pdf">
 </center>
 
 # Scalability of Algorithms
