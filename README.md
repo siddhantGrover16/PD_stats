@@ -1,9 +1,9 @@
 # Phylogenetic Diversity Statistics for All Clades in a Phylogeny
 A project designed with algorithms to compute [Phylogenetic Diversity (PD) Statistics](https://en.wikipedia.org/wiki/Phylogenetic_diversity) - Minimum, Maximum, Average, Variance on a phylogenetic tree.
 
-Grover, S., Markin, A., Anderson, T.K., and Eulenstein, O. (in review). Phylogenetic Diversity Statistics for All Clades in a Phylogeny.
+Grover, S., Markin, A., Anderson, T.K., and Eulenstein, O. (in press). Phylogenetic Diversity Statistics for All Clades in a Phylogeny. *Bioinformatics* XX:XX. (ISMB/ECCB 2023).
 
-Abstract: The classic quantitative measure of phylogenetic diversity, PD, has been used to address problems in conservation biology, microbial ecology, and evolutionary biology. PD is the minimum total length of the branches in a phylogeny required to cover a specified set of taxa on the phylogeny. A general goal in the application of PD has been identifying taxa that maximize PD on a given phylogeny; this has been mirrored in active research to develop efficient algorithms for the problem. Other descriptive statistics, such as the minimum PD, average PD, and standard deviation of PD, can provide invaluable insight into the distribution of PD across a phylogeny. However, there has been limited or no research on computing these statistics, especially when required for each clade in a phylogeny, enabling direct comparisons of PD between clades. We introduce efficient algorithms for computing PD and the associated descriptive statistics for a given phylogeny and each of its clades. In simulation studies, we demonstrate the ability of our algorithms to analyze large-scale phylogenies with applications in ecology and evolutionary biology
+Abstract: The classic quantitative measure of phylogenetic diversity, PD, has been used to address problems in conservation biology, microbial ecology, and evolutionary biology. PD is the minimum total length of the branches in a phylogeny required to cover a specified set of taxa on the phylogeny. A general goal in the application of PD has been identifying a set of taxa of size k that maximize PD on a given phylogeny; this has been mirrored in active research to develop efficient algorithms for the problem. Other descriptive statistics, such as the minimum PD, average PD, and standard deviation of PD, can provide invaluable insight into the distribution of PD across a phylogeny (relative to a fixed value of k). However, there has been limited or no research on computing these statistics, especially when required for each clade in a phylogeny, enabling direct comparisons of PD between clades. We introduce efficient algorithms for computing PD and the associated descriptive statistics for a given phylogeny and each of its clades. In simulation studies, we demonstrate the ability of our algorithms to analyze large-scale phylogenies with applications in ecology and evolutionary biology.
 
 # Requirements
   * Python 3.7
@@ -28,14 +28,18 @@ The statistic arguments are as follows:
 # Tutorial
 To run this tool on a nexus tree please follow the steps below:
 
-1) place a nexus binary treefile in the same directory as the project
-2) run pdstat.py with the following arguements: treename, (int)k, function (-fmin,-fmax, -favg, -fvar, -fhot, or -fall)
-  * example : pdstat.py t100.tre 10 -fmax 
+1. place a nexus binary treefile in the same directory as the project
+2. run pdstat.py with the following arguements: treename, (int)k, function (-fmin,-fmax, -favg, -fvar, -fhot, or -fall)
+
+  * example : 
+  
+  > pdstat.py t100.tre 10 -fmax 
+  
     The example above runs pdstat.py on the example treefile with 100 taxa and finds the maxPD for k=10 taxa in the tree.
     
     Note: the user can run multiple functions on the treefile, eg. pdstat.py treename.tre 10 -fmax -fmin, or can run all functions with the -fall flag.
     
-3) The output of the above command will be a file named "annotated_tree_nex" with the clades annotated with the maxPD at clades with k=10. This tree file can be opened with FigTree, and the nodes annotated using the "node labels" or "node shapes" menu.
+3. The output of the above command will be a file named "annotated_tree_nex" with the clades annotated with the maxPD at clades with k=10. This tree file can be opened with FigTree, and the nodes annotated using the "node labels" or "node shapes" menu.
 
 Input test files with different numbers of input taxa are also present in the directory (t50.tre,t100.tre,t200.tre,t300.tre,t400.tre).
 
