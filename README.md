@@ -32,10 +32,10 @@ To run this tool on a nexus tree please follow the steps below:
 2. run pdstat.py with the following arguements: treename, (int)k, function (-fmin,-fmax, -favg, -fvar, -fhot, or -fall)
 
   * example : <br>
-  `pdstat.py t100.tre 10 -fmax"`<br> 
+  `python pdstat.py t100.tre 10 -fmax"`<br> 
   The example above runs pdstat.py on the example treefile with 100 taxa and finds the maxPD for k=10 taxa in the tree.
   
-  Note: the user can run multiple functions on the treefile, eg. `pdstat.py treename.tre 10 -fmax -fmin`, or can run all functions with the `-fall` flag.
+  Note: the user can run multiple functions on the treefile, eg. `python pdstat.py treename.tre 10 -fmax -fmin`, or can run all functions with the `-fall` flag.
     
 3. The output of the above command will be a file named "annotated_tree_nex" with the clades annotated with the maxPD (or other statistic) at clades with k=10. This tree file can be opened with FigTree, and the nodes annotated using the "node labels" or "node shapes" menu.
 
